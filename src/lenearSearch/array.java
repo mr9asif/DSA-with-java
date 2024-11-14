@@ -1,5 +1,4 @@
-import java.util.Scanner;
-class Main {
+class array {
     public static void main(String[] args) {
         int[] arr = {3,2,4,5,4};
         int target = 4;
