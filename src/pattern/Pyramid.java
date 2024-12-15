@@ -28,6 +28,21 @@ package pattern;
 //     * * *
 //       *
 
+//no:5
+
+//           *
+//           **
+//           ***
+//           ****
+//           *****
+//           ******
+//           *****
+//           ****
+//           ***
+//           **
+//           *
+
+
 public class Pyramid {
     public static void main(String[] args) {
 //        int rows = 4; // Number of rows for the pattern
@@ -126,5 +141,21 @@ public class Pyramid {
 //            }
 //            System.out.println();
 //        }
+
+
+//        no:5
+
+//         for(int i=0; i<6; i++){
+//             for(int j=0; j< i; j++){
+//                 System.out.print("*");
+//             }
+//             System.out.println();
+//       }
+//         for(int i=0; i<6; i++){
+//             for(int j=i; j< 6; j++){
+//                 System.out.print("*");
+//             }
+//             System.out.println();
+//         }
     }
 }
