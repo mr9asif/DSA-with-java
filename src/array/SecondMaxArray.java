@@ -1,4 +1,4 @@
-package array;
+package Array;
 
 public class SecondMaxArray {
     public static void main(String[] args) {
