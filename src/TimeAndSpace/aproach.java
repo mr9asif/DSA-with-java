@@ -30,6 +30,7 @@ public class aproach {
 
 
     // Aproach 2 --->
+    // O(n)
     boolean[] flag = new boolean[n+1];
 
     for(int i = 0; i<n; i++){
