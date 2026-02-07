@@ -12,6 +12,8 @@ public class Linklist {
 }
  public static Node head;
  public static Node tail;
+public static int size = 0;
+
 
 //  add first
 public  void addFirst(int data){
@@ -19,6 +21,7 @@ public  void addFirst(int data){
     Node newNode = new Node(data);
     if(head == null){
         head=tail=newNode;
+          size++;
         return;
     }
     // step2: newNode next = head
@@ -26,7 +29,7 @@ public  void addFirst(int data){
 
     // step3: head = newNode
     head = newNode;
-
+ 
 }
 
 // add last
@@ -38,6 +41,7 @@ public  void addFirst(int data){
       tail.next=temp;
       tail=temp;
     }
+    size++;
  }
 
 //  insertAt index
@@ -49,6 +53,7 @@ void insertAt(int idx, int val){
     }
     t.next= temp.next;
     temp.next = t;
+    size++;
     
 }
 
@@ -62,6 +67,7 @@ void insertAtS(int idx, int val) {
     if (idx == 0) {
         t.next = head;
         head = t;
+        size++;
         return;
     }
 
@@ -75,14 +81,30 @@ void insertAtS(int idx, int val) {
 
     t.next = temp.next;
     temp.next = t;
+         size++;
 }
 
+// remove first
+void removeFirst(){
+    if(size==0){
+        System.out.println("empty");
+    }
+    
+    head = head.next;
+    size--;
+}
+
+// reture size
+int size(){
+    
+    return size;
+}
 
 // print linklist
 public void display(){
         Node temp = head;
         while(temp!=null){
-           System.out.print(temp.data+" ");
+           System.out.print(temp.data+"-> ");
            temp=temp.next;
         }
 }
@@ -94,7 +116,10 @@ public void display(){
         ll.addLast(5);
         ll.insertAt(3, 1);
         ll.insertAtS(2, 10);
+        ll.removeFirst();
         ll.display();
+        int a =ll.size();
+        System.out.println("size:"+a);
 
 
     }
