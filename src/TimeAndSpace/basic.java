@@ -3,6 +3,7 @@ package TimeAndSpace;
 public class basic {
     
     public static void main(String[] args) {
+
         /* 
         int n=5;
         int m=4;

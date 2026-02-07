@@ -29,22 +29,72 @@ public  void addFirst(int data){
 
 }
 
+// add last
+ public void addLast(int val){
+    Node temp = new Node(val);
+    if(head == null){
+        head=tail=temp;
+    }else{
+      tail.next=temp;
+      tail=temp;
+    }
+ }
+
+//  insertAt index
+void insertAt(int idx, int val){
+    Node t = new Node(val);
+    Node temp = head;
+    for(int i=1; i<=idx-1; i++){
+        temp = temp.next;
+    }
+    t.next= temp.next;
+    temp.next = t;
+    
+}
+
+// more secure insertAt
+void insertAtS(int idx, int val) {
+    if (idx < 0) return;
+
+    Node t = new Node(val);
+
+    // insert at head
+    if (idx == 0) {
+        t.next = head;
+        head = t;
+        return;
+    }
+
+    Node temp = head;
+    for (int i = 0; i < idx - 1 && temp != null; i++) {
+        temp = temp.next;
+    }
+
+    // index out of bounds
+    if (temp == null) return;
+
+    t.next = temp.next;
+    temp.next = t;
+}
+
+
 // print linklist
-public void print(){
+public void display(){
         Node temp = head;
         while(temp!=null){
-           System.out.println(temp.data);
+           System.out.print(temp.data+" ");
            temp=temp.next;
         }
 }
        public static void main(String[] args) {
         Linklist ll = new Linklist();
         ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addFirst(3);
-        ll.print();
-        
-      
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.insertAt(3, 1);
+        ll.insertAtS(2, 10);
+        ll.display();
 
 
     }
