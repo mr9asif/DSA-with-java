@@ -88,13 +88,51 @@ void insertAtS(int idx, int val) {
 void removeFirst(){
     if(size==0){
         System.out.println("empty");
+    }else if (size == 1) {
+        head = tail = null;
+        size=0;
+        
     }
     
     head = head.next;
     size--;
 }
 
-// reture size
+void removeLast(){
+        if(size == 0){
+        System.out.println("empty");
+        return;
+    }
+
+    if(size == 1){
+        head = tail = null;
+        size--;
+        return;
+    }
+
+    Node temp = head;
+    for(int i=1; i<=size-2; i++){
+        temp = temp.next;
+    }
+    temp.next=null;
+    tail=temp;
+    size--;
+}
+
+// iterator search
+int iteratorSearch(int key){
+    int i=0;
+    Node temp = head;
+    while(head != null){
+        if(temp.data == key){
+            return i;
+        }
+        temp = temp.next;
+        i++;
+    }
+    return -1;
+}
+//reture size
 int size(){
     
     return size;
@@ -117,6 +155,8 @@ public void display(){
         ll.insertAt(3, 1);
         ll.insertAtS(2, 10);
         ll.removeFirst();
+        ll.removeLast();
+        System.out.println(ll.iteratorSearch(4));
         ll.display();
         int a =ll.size();
         System.out.println("size:"+a);
