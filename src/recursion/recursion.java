@@ -19,3 +19,7 @@ public class recursion {
         printIncreasing(n);
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfe1afed1a5c0245178c2d85932822cb541dacb3
